@@ -10,6 +10,8 @@ if (!digits || !operators || !displayBox || !equals || !clear) {
     throw new Error("Issue with selector");
 }
 
+
+//Variables
 let operand1 = "";
 let operand2 = "";
 let operatorSign = "";
@@ -52,7 +54,7 @@ const handleEqualsClick = (event: Event) => {
     result = "unknown calculation"
     }
     
-    console.log(result);
+    displayBox.innerHTML == result;
 };
 
 const handleClearClick = (event: Event) => {
@@ -89,31 +91,3 @@ clear.addEventListener("click", handleClearClick);
 //5. when user clicks C, everything clears
 
 ///operand1 operator operand2
-
-
-
-/* 
-input box will need to use HTMLElement: innerText
-input.forEach((digit that is clicked) => display in box)
-
-let calculation = `${initialValue} ${operator} ${currentValue}`
-
-if(+){
-    initialValue + currentValue
-} else if(-){
-    initialValue - currentValue
-} else if(/){
-    initialValue / currentValue
-}else if(*){
-    initialValue * currentValue
-}
-
-if(C){
-    return empty box
-}
-
-if(=){
-    return calcualtion
-}
-
- */
