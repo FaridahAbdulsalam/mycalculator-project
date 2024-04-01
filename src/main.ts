@@ -3,7 +3,7 @@ const operand1 = "";
 const operand2 = "";
 const operator = "";
 
-
+//Click Events
 const digits = document.querySelectorAll<HTMLButtonElement>(
   ".calc-buttons__btn"
 );
@@ -12,13 +12,17 @@ const operators = document.querySelectorAll<HTMLButtonElement>(
     ".calc-buttons__operator"
 );
 
-if (!digits || !operators) {
+const displayBox = document.querySelector(".user__output")
+
+if (!digits || !operators || !displayBox) {
   throw new Error("Issue with selector");
 }
 
+
+//Event Handlers
 const handleDigitClick = (event: Event) => {
-const button = event.target as HTMLButtonElement;
-  console.log("the number was clicked", button.id);
+const digit = event.target as HTMLButtonElement;
+  displayBox.innerHTML += digit.id;
 };
 
 const handleOperatorClick = (event: Event) => {
@@ -29,14 +33,24 @@ const handleEqualsClick = (event: Event) => {
     console.log("This equals was clicked", event)
 };
 
-//Event handler for when the button is clicked.
-digits.forEach((button) => {
-  button.addEventListener("click", handleDigitClick);
+
+
+
+//Event Listeners for when buttons are clicked
+digits.forEach((digit) => {
+  digit.addEventListener("click", handleDigitClick);
 });
 
 operators.forEach((operator) => {
     operator.addEventListener("click", handleOperatorClick)
 });
+
+
+
+
+
+
+
 
 /* 
 operand1
