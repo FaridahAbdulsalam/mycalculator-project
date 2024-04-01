@@ -1,7 +1,4 @@
 
-const operand1 = "";
-const operand2 = "";
-const operator = "";
 
 //Click Events
 const digits = document.querySelectorAll<HTMLButtonElement>(
@@ -15,19 +12,37 @@ const operators = document.querySelectorAll<HTMLButtonElement>(
 const displayBox = document.querySelector(".user__output")
 
 if (!digits || !operators || !displayBox) {
-  throw new Error("Issue with selector");
+    throw new Error("Issue with selector");
 }
 
+let operand1 = "";
+let operand2 = "";
+let hasCalledOperator = true;
 
 //Event Handlers
 const handleDigitClick = (event: Event) => {
     const digit = event.target as HTMLButtonElement;
-    displayBox.innerHTML += digit.id; 
+    if(hasCalledOperator)
+    {
+       displayBox.innerHTML = operand1 += digit.id
+    }
+    else
+    {
+        displayBox.innerHTML = operand2 += digit.id
+    }
+
 };
+
 
 const handleOperatorClick = (event: Event) => {
     const operator = event.target as HTMLButtonElement;
-    displayBox .innerHTML += operator.id;
+    hasCalledOperator = false;
+
+    displayBox.innerHTML += operator.id
+
+    if(operator.id == "+"){
+        operand1 + operand2
+    }
 };
 
 const handleEqualsClick = (event: Event) => {
@@ -35,18 +50,15 @@ const handleEqualsClick = (event: Event) => {
 };
 
 
-
-
-
-
 //Event Listeners for when buttons are clicked
 digits.forEach((digit) => {
-  digit.addEventListener("click", handleDigitClick);
+    digit.addEventListener("click", handleDigitClick);
 });
 
 operators.forEach((operator) => {
     operator.addEventListener("click", handleOperatorClick)
 });
+
 
 
 
