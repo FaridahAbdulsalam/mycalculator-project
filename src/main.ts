@@ -9,9 +9,11 @@ const operators = document.querySelectorAll<HTMLButtonElement>(
     ".calc-buttons__operator"
 );
 
+const equals = document.querySelector<HTMLButtonElement>(".calc-buttons__return");
+
 const displayBox = document.querySelector(".user__output")
 
-if (!digits || !operators || !displayBox) {
+if (!digits || !operators || !displayBox || !equals) {
     throw new Error("Issue with selector");
 }
 
@@ -54,6 +56,8 @@ digits.forEach((digit) => {
 operators.forEach((operator) => {
     operator.addEventListener("click", handleOperatorClick)
 });
+
+equals.addEventListener("click", handleEqualsClick);
 
 
 
