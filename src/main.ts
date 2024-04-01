@@ -1,5 +1,4 @@
 
-
 //Click Events
 const digits = document.querySelectorAll<HTMLButtonElement>(
   ".calc-buttons__btn"
@@ -19,44 +18,49 @@ if (!digits || !operators || !displayBox || !equals) {
 
 let operand1 = "";
 let operand2 = "";
+let operatorSign = "";
 let hasCalledOperator = false;
 
 //Event Handlers
 const handleDigitClick = (event: Event) => {
     const digit = event.target as HTMLButtonElement;
+    
     if(hasCalledOperator)
     {
-       displayBox.innerHTML = operand1 += digit.id
+       displayBox.innerHTML = operand2 += digit.id
     }
     else
     {
-        displayBox.innerHTML = operand2 += digit.id
+        displayBox.innerHTML = operand1 += digit.id
     }
-
 };
-
 
 const handleOperatorClick = (event: Event) => {
     const operator = event.target as HTMLButtonElement;
     hasCalledOperator = true;
-
+    operatorSign = operator.id
     displayBox.innerHTML += operator.id
-
-    if(operator.id === "+"){
-        Number(operand1) + Number(operand2)
-    }else if(operator.id === "-"){
-        Number(operand1) - Number(operand2)
-    }else if(operator.id === "/"){
-        Number(operand1) / Number(operand2)
-    }else if(operator.id === "*"){
-        Number(operand1) * Number(operand2)
-    }
 };
 
 const handleEqualsClick = (event: Event) => {
-    console.log("This equals was clicked", event)
 
+    let result;
+
+    if(operatorSign === "+"){
+        result = Number(operand1) + Number(operand2)
+    }else if(operatorSign === "-"){
+        result = Number(operand1) - Number(operand2)
+    }else if(operatorSign === "/"){
+        result = Number(operand1) / Number(operand2)
+    }else if(operatorSign === "*"){
+        result = Number(operand1) * Number(operand2)
+    } else{
+    result = "unknown calculation"
+    }
+    
+    console.log(result);
 };
+
 
 
 //Event Listeners for when buttons are clicked
@@ -75,15 +79,6 @@ equals.addEventListener("click", handleEqualsClick);
 
 
 
-
-
-
-/* 
-operand1
-operand2
-operator
-
- */
 
 //LOGIC
 
