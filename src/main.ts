@@ -1,18 +1,12 @@
 
 //Click Events
-const digits = document.querySelectorAll<HTMLButtonElement>(
-  ".calc-buttons__btn"
-);
-
-const operators = document.querySelectorAll<HTMLButtonElement>(
-    ".calc-buttons__operator"
-);
-
+const digits = document.querySelectorAll<HTMLButtonElement>(".calc-buttons__btn");
+const operators = document.querySelectorAll<HTMLButtonElement>(".calc-buttons__operator");
 const equals = document.querySelector<HTMLButtonElement>(".calc-buttons__return");
+const clear = document.querySelector<HTMLButtonElement>(".calc-buttons__clear");
+const displayBox = document.querySelector<HTMLButtonElement>(".user__output");
 
-const displayBox = document.querySelector(".user__output")
-
-if (!digits || !operators || !displayBox || !equals) {
+if (!digits || !operators || !displayBox || !equals || !clear) {
     throw new Error("Issue with selector");
 }
 
@@ -61,6 +55,11 @@ const handleEqualsClick = (event: Event) => {
     console.log(result);
 };
 
+const handleClearClick = (event: Event) => {
+    displayBox.value = "";
+    hasCalledOperator = false;
+}
+
 
 
 //Event Listeners for when buttons are clicked
@@ -73,6 +72,7 @@ operators.forEach((operator) => {
 });
 
 equals.addEventListener("click", handleEqualsClick);
+clear.addEventListener("click", handleClearClick);
 
 
 
