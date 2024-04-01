@@ -41,10 +41,18 @@ const handleOperatorClick = (event: Event) => {
     hasCalledOperator = true;
 
     displayBox.innerHTML += operator.id
+
+
+    if(operator.id === "+"){
+        Number(operand1) + Number(operand2)
+    }else if(operator.id === "-"){
+        Number(operand2) - Number(operand1)
+    }
 };
 
 const handleEqualsClick = (event: Event) => {
     console.log("This equals was clicked", event)
+
 };
 
 
