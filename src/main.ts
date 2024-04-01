@@ -21,17 +21,20 @@ if (!digits || !operators || !displayBox) {
 
 //Event Handlers
 const handleDigitClick = (event: Event) => {
-const digit = event.target as HTMLButtonElement;
-  displayBox.innerHTML += digit.id;
+    const digit = event.target as HTMLButtonElement;
+    displayBox.innerHTML += digit.id; 
 };
 
 const handleOperatorClick = (event: Event) => {
-    console.log("This operator was clicked", event)
+    const operator = event.target as HTMLButtonElement;
+    displayBox .innerHTML += operator.id;
 };
 
 const handleEqualsClick = (event: Event) => {
     console.log("This equals was clicked", event)
 };
+
+
 
 
 
