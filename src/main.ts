@@ -17,7 +17,7 @@ if (!digits || !operators || !displayBox) {
 
 let operand1 = "";
 let operand2 = "";
-let hasCalledOperator = true;
+let hasCalledOperator = false;
 
 //Event Handlers
 const handleDigitClick = (event: Event) => {
@@ -36,13 +36,9 @@ const handleDigitClick = (event: Event) => {
 
 const handleOperatorClick = (event: Event) => {
     const operator = event.target as HTMLButtonElement;
-    hasCalledOperator = false;
+    hasCalledOperator = true;
 
     displayBox.innerHTML += operator.id
-
-    if(operator.id == "+"){
-        operand1 + operand2
-    }
 };
 
 const handleEqualsClick = (event: Event) => {
