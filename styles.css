@@ -1,5 +1,8 @@
+.container h1 {
+  color: palevioletred;
+}
 .container .user__output {
-  border: 1px solid red;
+  border: 1px solid hotpink;
 }
 .container .calc-buttons__container {
   display: grid;
