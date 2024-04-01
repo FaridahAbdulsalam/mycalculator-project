@@ -50,7 +50,9 @@ const handleEqualsClick = (event: Event) => {
         result = Number(operand1) / Number(operand2)
     }else if(operatorSign === "*"){
         result = Number(operand1) * Number(operand2)
-    } else{
+    }else if(operatorSign === "%"){
+        result = Number(operand1) % Number(operand2)
+    }  else{
     result = "unknown calculation"
     }
     
