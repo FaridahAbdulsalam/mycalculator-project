@@ -54,12 +54,15 @@ const handleEqualsClick = (event: Event) => {
     result = "unknown calculation"
     }
     
-    displayBox.textContent = String(result)
+    displayBox.textContent = String(result);
 };
 
 const handleClearClick = (event: Event) => {
-    displayBox.value = "";
+    operand1 = "";
+    operand2 = "";
+    operatorSign = "";
     hasCalledOperator = false;
+    displayBox.textContent = "";
 }
 
 
