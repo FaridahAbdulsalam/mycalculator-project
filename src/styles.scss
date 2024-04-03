@@ -10,34 +10,21 @@ h1{
 }
 
 .calculator__container{
-    border: solid black 6px;
+    border: solid black 10px;
     border-radius: 60px;
     width: 425px;
     height: 812px;
+    background-image: linear-gradient(rgba(128, 128, 128, 0.479), white);
 
-    .calc-buttons__container{
-
-        display: grid;
-        grid-template-columns: repeat(4, 1fr);
-        grid-template-rows: repeat(6, 1fr);
-        height: 50vh;
-        gap: 15px;
-        padding: 10px;;
-
-        #equals{
-            grid-column: 3/5;
-        }
-
-        .calc-buttons__operator, 
-        .calc-buttons__btn,
-        .calc-buttons__clear,
-        .calc-buttons__plusMinus,
-        .calc-buttons__return{
-            border-radius: 50px;
-        }
-
+    .calculator__container-notch{
+        // border: 1px black solid;
+        height: 30px;
+        width: 35vw;
+        margin: 0 auto;
+        background-color: black;
+        border-radius: 0px 0px 10px 10px; 
     }
-
+    
     .display__container{
         border: 2px solid black;
         width: 400px;
@@ -66,10 +53,47 @@ h1{
           align-items: center;
 
         }
-        
     }
-}
 
+    .calc-buttons__container{
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: repeat(6, 1fr);
+        height: 45vh;
+        gap: 15px;
+        padding: 10px;;
+    
+
+        #equals{
+            grid-column: 3/5;
+        }
+
+        .calc-buttons__operator, 
+        .calc-buttons__btn,
+        .calc-buttons__clear,
+        .calc-buttons__plusMinus,
+        .calc-buttons__return{
+            border-radius: 50px;
+            border: 1px solid rgba(250, 147, 195, 0.226);
+            font-size: 50px;
+        }
+
+        .calc-buttons__operator,
+        .calc-buttons__plusMinus,
+        .calc-buttons__clear{
+            background-image: linear-gradient(rgb(250, 147, 195), white);
+        }
+
+        .calc-buttons__btn{
+            background-image: linear-gradient(rgba(240, 176, 208, 0.514), white);
+        }
+
+        .calc-buttons__return{
+            background-color: rgba(250, 147, 195, 0.61);
+        }
+    }
+
+}
 
 /*
 
