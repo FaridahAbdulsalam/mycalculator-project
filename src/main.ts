@@ -5,8 +5,9 @@ const operators = document.querySelectorAll<HTMLButtonElement>(".calc-buttons__o
 const equals = document.querySelector<HTMLButtonElement>(".calc-buttons__return");
 const clear = document.querySelector<HTMLButtonElement>(".calc-buttons__clear");
 const displayBox = document.querySelector<HTMLButtonElement>(".display__view-calculation");
+const displayResult = document.querySelector(".display__view-result");
 
-if (!digits || !operators || !displayBox || !equals || !clear) {
+if (!digits || !operators || !displayBox || !displayResult || !equals || !clear) {
     throw new Error("Issue with selector");
 }
 
@@ -23,7 +24,8 @@ const handleDigitClick = (event: Event) => {
 
     if(hasCalledOperator)
     {
-       displayBox.innerHTML = operand2 += digit.innerHTML
+        operand2 += digit.innerHTML
+        displayBox.innerHTML = operand1 + operatorSign + operand2;
     }
     else
     {
@@ -55,14 +57,14 @@ const handleEqualsClick = (event: Event) => {
     }  else{
     result = "unknown calculation"
     }
- 
+
+    displayBox.innerHTML = operand1 + operatorSign + operand2; 
+    displayResult.textContent = `= ${String(result)}`;
+
     operand1 = "";
     operand2 = "";
     operatorSign = "";
     hasCalledOperator = false;
-    displayBox.textContent = "";
-
-    displayBox.textContent = String(result);
 };
 
 const handleClearClick = (event: Event) => {
@@ -71,6 +73,7 @@ const handleClearClick = (event: Event) => {
     operatorSign = "";
     hasCalledOperator = false;
     displayBox.textContent = "";
+    displayResult.textContent = "";
 }
 
 

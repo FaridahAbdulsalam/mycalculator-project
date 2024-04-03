@@ -26,9 +26,9 @@ h1{
     }
     
     .display__container{
-        border: 2px solid black;
+        // border: 2px solid black;
         width: 400px;
-        height: 30vh;
+        height: 25vh;
         padding: 10px;
         display: flex;
         flex-direction: column;
@@ -36,22 +36,27 @@ h1{
         align-items: flex-end;
         
         .display__view-calculation{
-          border: 2px solid purple;
+        //   border: 2px solid purple;
           height: 5vh;
           width: 70vw;
+          padding-right: 20px;
           display: flex;
           justify-content: flex-end;
           align-items: center;
+          font-size: 30px;
+          color: rgb(122, 122, 122);
         }
 
         .display__view-result{
-          border: solid 2px hotpink;
-          height: 15vh;
+        //   border: solid 2px hotpink;
+          height: 10vh;
           width: 70vw;
+          padding-right: 20px;
           display: flex;
           justify-content: flex-end;
-          align-items: center;
-
+          align-items: flex-start;
+          font-size: 60px;
+          color: rgb(59, 55, 57) ;
         }
     }
 
@@ -59,7 +64,7 @@ h1{
         display: grid;
         grid-template-columns: repeat(4, 1fr);
         grid-template-rows: repeat(6, 1fr);
-        height: 45vh;
+        height: 50vh;
         gap: 15px;
         padding: 10px;;
     
