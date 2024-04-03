@@ -6,9 +6,17 @@ const equals = document.querySelector<HTMLButtonElement>(".calc-buttons__return"
 const clear = document.querySelector<HTMLButtonElement>(".calc-buttons__clear");
 const displayBox = document.querySelector<HTMLButtonElement>(".display__view-calculation");
 const displayResult = document.querySelector(".display__view-result");
+const toggleButton = document.querySelector<HTMLButtonElement>("#toggle-on");
+const toggleButtonOff = document.querySelector<HTMLButtonElement>("#toggle-off");
+const calcBackgroundChange = document.querySelector<HTMLImageElement>(".calculator__container");
 
-if (!digits || !operators || !displayBox || !displayResult || !equals || !clear) {
-    throw new Error("Issue with selector");
+
+if (!displayBox || !displayResult || !calcBackgroundChange) {
+    throw new Error("Issue with viewing selector");
+}
+
+if(!toggleButton || !toggleButtonOff || !digits || !operators || !equals || !clear ){
+    throw new Error ("Issue with click selector")
 }
 
 
@@ -75,6 +83,23 @@ const handleClearClick = (event: Event) => {
     displayBox.textContent = "";
     displayResult.textContent = "";
 }
+
+
+
+const handleToggle = () =>{
+    if(toggleButton){
+        toggleButtonOff.style.display = "inline-block";
+        toggleButton.style.display = "none";
+        calcBackgroundChange.style.backgroundImage = "linear-gradient(grey, black)"
+    }
+    //else{
+    //     toggleButtonOff.style.display = "none";
+    //     toggleButton.style.display = "inline-block";
+    //     calcBackgroundChange.style.backgroundImage = "";
+    // }
+}
+
+toggleButton.addEventListener("click", handleToggle);
 
 
 
