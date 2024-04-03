@@ -1,4 +1,4 @@
-
+import "../styles.scss";
 //Click Events
 const digits = document.querySelectorAll<HTMLButtonElement>(".calc-buttons__btn");
 const operators = document.querySelectorAll<HTMLButtonElement>(".calc-buttons__operator");
@@ -20,22 +20,24 @@ let hasCalledOperator = false;
 //Event Handlers
 const handleDigitClick = (event: Event) => {
     const digit = event.target as HTMLButtonElement;
-    
+    console.log(event)
+
     if(hasCalledOperator)
     {
-       displayBox.innerHTML = operand2 += digit.id
+       displayBox.innerHTML = operand2 += digit.innerHTML
     }
     else
     {
-        displayBox.innerHTML = operand1 += digit.id
+        displayBox.innerHTML = operand1 += digit.innerHTML
     }
 };
 
 const handleOperatorClick = (event: Event) => {
     const operator = event.target as HTMLButtonElement;
+    console.log(event)
     hasCalledOperator = true;
-    operatorSign = operator.id
-    displayBox.innerHTML += operator.id
+    operatorSign = operator.innerHTML
+    displayBox.innerHTML += operator.innerHTML
 };
 
 const handleEqualsClick = (event: Event) => {
@@ -89,7 +91,7 @@ clear.addEventListener("click", handleClearClick);
 
 //LOGIC
 
-//1. when user clicks a number it shoukd be stored in a variable (string of numbers)
+//1. when user clicks a number it should be stored in a variable (string of numbers)
 //2. when user clicks an operation should be stored in separate variable2 (operators string)
 //3. when user clicks on numbers again after operation store in variable 3 (string of numbers)
 //4. when user clicks equals sigh run a function that takes variable 1 and 3 and runs function for variable 2 

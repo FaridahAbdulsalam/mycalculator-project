@@ -1,11 +1,12 @@
 .container{
+    border: solid black 10px;
+    border-radius: 5px;
+    
 
     h1{
-        color: palevioletred;
+        color: red;
     }
-    .user__output{
-        border: 1px solid hotpink;
-    }
+
     .calc-buttons__container{
 
         display: grid;
@@ -16,5 +17,9 @@
             grid-column-start: 1;
             grid-column-end: 3;
         }
+    }
+
+    .display{
+        border: 2px solid black
     }
 }
