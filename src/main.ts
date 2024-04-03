@@ -4,7 +4,7 @@ const digits = document.querySelectorAll<HTMLButtonElement>(".calc-buttons__btn"
 const operators = document.querySelectorAll<HTMLButtonElement>(".calc-buttons__operator");
 const equals = document.querySelector<HTMLButtonElement>(".calc-buttons__return");
 const clear = document.querySelector<HTMLButtonElement>(".calc-buttons__clear");
-const displayBox = document.querySelector<HTMLButtonElement>(".display__view");
+const displayBox = document.querySelector<HTMLButtonElement>(".display__view-calculation");
 
 if (!digits || !operators || !displayBox || !equals || !clear) {
     throw new Error("Issue with selector");
