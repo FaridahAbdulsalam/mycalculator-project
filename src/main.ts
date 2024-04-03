@@ -1,10 +1,10 @@
-import "../styles.scss";
+import "./styles.scss";
 //Click Events
 const digits = document.querySelectorAll<HTMLButtonElement>(".calc-buttons__btn");
 const operators = document.querySelectorAll<HTMLButtonElement>(".calc-buttons__operator");
 const equals = document.querySelector<HTMLButtonElement>(".calc-buttons__return");
 const clear = document.querySelector<HTMLButtonElement>(".calc-buttons__clear");
-const displayBox = document.querySelector<HTMLButtonElement>(".display");
+const displayBox = document.querySelector<HTMLButtonElement>(".display__view");
 
 if (!digits || !operators || !displayBox || !equals || !clear) {
     throw new Error("Issue with selector");
@@ -20,7 +20,6 @@ let hasCalledOperator = false;
 //Event Handlers
 const handleDigitClick = (event: Event) => {
     const digit = event.target as HTMLButtonElement;
-    console.log(event)
 
     if(hasCalledOperator)
     {
@@ -34,7 +33,6 @@ const handleDigitClick = (event: Event) => {
 
 const handleOperatorClick = (event: Event) => {
     const operator = event.target as HTMLButtonElement;
-    console.log(event)
     hasCalledOperator = true;
     operatorSign = operator.innerHTML
     displayBox.innerHTML += operator.innerHTML
@@ -57,7 +55,13 @@ const handleEqualsClick = (event: Event) => {
     }  else{
     result = "unknown calculation"
     }
-    
+ 
+    operand1 = "";
+    operand2 = "";
+    operatorSign = "";
+    hasCalledOperator = false;
+    displayBox.textContent = "";
+
     displayBox.textContent = String(result);
 };
 
