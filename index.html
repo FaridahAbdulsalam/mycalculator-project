@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="./vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>myCalculator</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://kit.fontawesome.com/866736694d.js" crossorigin="anonymous"></script>
+    <script type="module" crossorigin src="./assets/index-BP7TnWpl.js"></script>
+    <link rel="stylesheet" crossorigin href="./assets/index-DQEjidFq.css">
+  </head>
+
+  <body>
+    <header>
+      <h1 class="header">My Calculator</h1>
+      <h2>A great application for all your calculating needs</h2>
+      <p>Toggle Light/Dark Mode</p>
+      <i class="fa-solid fa-toggle-on fa-2xl" style="color: #fa93c3; " id="toggle-on"></i>
+      <i class="fa-solid fa-toggle-off fa-2xl" style="color: #fa93c3;" id="toggle-off"></i>
+    </header>
+
+    
+    <div class="operator-animation">
+      <i class="fa-solid fa-plus fa-bounce fa-2xl" style="color: #fa93c3;"></i>
+      <i class="fa-solid fa-minus fa-bounce fa-2xl" style="color: #fa93c3;"></i>
+      <i class="fa-solid fa-divide fa-bounce fa-2xl" style="color: #fa93c3;"></i>
+      <i class="fa-solid fa-xmark fa-bounce fa-2xl" style="color: #fa93c3;"></i>
+    </div>
+    
+    
+    <div class="calculator__container" id="wholeCalc">
+      <div class="calculator__container-notch"></div>
+      
+      
+      <div class="display__container">
+        <div class="display__view-calculation"></div>
+        <div class="display__view-result">
+        </div>
+      </div>
+      
+      <div class="calc-buttons__container">
+           
+          <button class="calc-buttons__clear" id="clear">AC</button>
+          <button class="calc-buttons__backspace" id="backspace">C</button>
+          <button class="calc-buttons__operator" id="percentage">%</button>
+          <button class="calc-buttons__operator" id="divide">/</button>
+        
+          <button class="calc-buttons__btn" id="seven">7</button>
+          <button class="calc-buttons__btn" id="eight">8</button>
+          <button class="calc-buttons__btn" id="nine">9</button>
+          <button class="calc-buttons__operator" id="multiply">*</button>
+
+          <button class="calc-buttons__btn" id="four">4</button>
+          <button class="calc-buttons__btn" id="five">5</button>
+          <button class="calc-buttons__btn" id="six">6</button>
+          <button class="calc-buttons__operator" id="minus">-</button>
+
+          <button class="calc-buttons__btn" id="one">1</button>
+          <button class="calc-buttons__btn" id="two">2</button>
+          <button class="calc-buttons__btn" id="three">3</button>
+          <button class="calc-buttons__operator" id="add">+</button>
+
+          <button class="calc-buttons__btn" id="zero">0</button>
+          <button class="calc-buttons__btn" id="decimal">.</button>
+          <button class="calc-buttons__return" id="equals">=</button>
+      </div>
+
+    </div>
+
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320" id="wave__mobile">
+        <path 
+          fill="#fa93c3" fill-opacity="1" d="M0,96L0,96L288,96L288,224L576,224L576,96L864,96L864,128L1152,128L1152,64L1440,64L1440,320L1152,320L1152,320L864,320L864,320L576,320L576,320L288,320L288,320L0,320L0,320Z">
+        </path>
+      </svg>
+
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320" id="wave__desktop">
+        <path 
+          fill="#fa93c3" fill-opacity="1" d="M0,128L0,160L205.7,160L205.7,224L411.4,224L411.4,288L617.1,288L617.1,224L822.9,224L822.9,224L1028.6,224L1028.6,64L1234.3,64L1234.3,96L1440,96L1440,320L1234.3,320L1234.3,320L1028.6,320L1028.6,320L822.9,320L822.9,320L617.1,320L617.1,320L411.4,320L411.4,320L205.7,320L205.7,320L0,320L0,320Z">
+        </path>
+      </svg>
+
+  </body>
+</html>
