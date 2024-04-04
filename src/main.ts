@@ -21,8 +21,8 @@ if(!toggleButton || !toggleButtonOff || !digits || !operators || !equals || !cle
 
 
 //Variables
-let operand1 = "";
-let operand2 = "";
+let num1 = "";
+let num2 = "";
 let operatorSign = "";
 let hasCalledOperator = false;
 
@@ -32,12 +32,12 @@ const handleDigitClick = (event: Event) => {
 
     if(hasCalledOperator)
     {
-        operand2 += digit.innerHTML
-        displayBox.innerHTML = operand1 + operatorSign + operand2;
+        num2 += digit.innerHTML
+        displayBox.innerHTML = num1 + operatorSign + num2;
     }
     else
     {
-        displayBox.innerHTML = operand1 += digit.innerHTML
+        displayBox.innerHTML = num1 += digit.innerHTML
     }
 };
 
@@ -48,36 +48,36 @@ const handleOperatorClick = (event: Event) => {
     displayBox.innerHTML += operator.innerHTML
 };
 
-const handleEqualsClick = (event: Event) => {
+const handleEqualsClick = () => {
 
     let result;
 
     if(operatorSign === "+"){
-        result = Number(operand1) + Number(operand2)
+        result = Number(num1) + Number(num2)
     }else if(operatorSign === "-"){
-        result = Number(operand1) - Number(operand2)
+        result = Number(num1) - Number(num2)
     }else if(operatorSign === "/"){
-        result = Number(operand1) / Number(operand2)
+        result = Number(num1) / Number(num2)
     }else if(operatorSign === "*"){
-        result = Number(operand1) * Number(operand2)
+        result = Number(num1) * Number(num2)
     }else if(operatorSign === "%"){
-        result = Number(operand1) % Number(operand2)
+        result = Number(num1) % Number(num2)
     }  else{
     result = "unknown calculation"
     }
 
-    displayBox.innerHTML = operand1 + operatorSign + operand2; 
+    displayBox.innerHTML = num1 + operatorSign + num2; 
     displayResult.textContent = `= ${String(result)}`;
 
-    operand1 = "";
-    operand2 = "";
+    num1 = "";
+    num2 = "";
     operatorSign = "";
     hasCalledOperator = false;
 };
 
-const handleClearClick = (event: Event) => {
-    operand1 = "";
-    operand2 = "";
+const handleClearClick = () => {
+    num1 = "";
+    num2 = "";
     operatorSign = "";
     hasCalledOperator = false;
     displayBox.textContent = "";
@@ -86,21 +86,21 @@ const handleClearClick = (event: Event) => {
 
 
 
-const handleToggle = () =>{
+const handleToggleDark = () =>{
     if(toggleButton){
         toggleButtonOff.style.display = "inline-block";
         toggleButton.style.display = "none";
         calcBackgroundChange.style.backgroundImage = "linear-gradient(grey, black)"
-    }
-    //else{
-    //     toggleButtonOff.style.display = "none";
-    //     toggleButton.style.display = "inline-block";
-    //     calcBackgroundChange.style.backgroundImage = "";
-    // }
+    } 
 }
 
-toggleButton.addEventListener("click", handleToggle);
-
+const handleToggleLight = () =>{
+    if(toggleButtonOff){
+        toggleButtonOff.style.display = "none";
+        toggleButton.style.display = "inline-block";
+        calcBackgroundChange.style.backgroundImage = "";
+    }
+}
 
 
 //Event Listeners for when buttons are clicked
@@ -115,6 +115,8 @@ operators.forEach((operator) => {
 equals.addEventListener("click", handleEqualsClick);
 clear.addEventListener("click", handleClearClick);
 
+toggleButton.addEventListener("click", handleToggleDark);
+toggleButtonOff.addEventListener("click", handleToggleLight);
 
 
 
@@ -129,4 +131,4 @@ clear.addEventListener("click", handleClearClick);
 //4. when user clicks equals sigh run a function that takes variable 1 and 3 and runs function for variable 2 
 //5. when user clicks C, everything clears
 
-///operand1 operator operand2
+///num1 operator num2
