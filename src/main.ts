@@ -4,8 +4,8 @@ const digits = document.querySelectorAll<HTMLButtonElement>(".calc-buttons__btn"
 const operators = document.querySelectorAll<HTMLButtonElement>(".calc-buttons__operator");
 const equals = document.querySelector<HTMLButtonElement>(".calc-buttons__return");
 const clear = document.querySelector<HTMLButtonElement>(".calc-buttons__clear");
-const displayBox = document.querySelector<HTMLButtonElement>(".display__view-calculation");
-const displayResult = document.querySelector(".display__view-result");
+const displayBox = document.querySelector<HTMLInputElement>(".display__view-calculation");
+const displayResult = document.querySelector<HTMLInputElement>(".display__view-result");
 const toggleButton = document.querySelector<HTMLButtonElement>("#toggle-on");
 const toggleButtonOff = document.querySelector<HTMLButtonElement>("#toggle-off");
 const calcBackgroundChange = document.querySelector<HTMLImageElement>(".calculator__container");
@@ -91,6 +91,9 @@ const handleToggleDark = () =>{
         toggleButtonOff.style.display = "inline-block";
         toggleButton.style.display = "none";
         calcBackgroundChange.style.backgroundImage = "linear-gradient(grey, black)"
+        displayBox.style.color ="white";
+        displayResult.style.color ="white";
+        document.body.style.backgroundColor = "#585254";
     } 
 }
 
@@ -99,6 +102,10 @@ const handleToggleLight = () =>{
         toggleButtonOff.style.display = "none";
         toggleButton.style.display = "inline-block";
         calcBackgroundChange.style.backgroundImage = "";
+        displayBox.style.color ="";
+        displayResult.style.color ="";
+        document.body.style.backgroundColor = "";
+
     }
 }
 

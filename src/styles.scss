@@ -5,6 +5,10 @@
     box-sizing: border-box;
 }
 
+body{
+    background-color: rgba(255, 192, 203, 0.226);
+}
+
 header{
 
     padding-bottom: 50px;
@@ -14,7 +18,16 @@ header{
     align-items: center;
 
     h1{
-        color: palevioletred;
+        color: rgba(250, 147, 195, 0.61);
+        font-size: 70px;
+    }
+
+    h2{
+        text-align: center;
+        margin: 30px;
+        padding: 20px;
+        background-color: rgba(235, 174, 6, 0.699);
+        border-radius: 10px 50px;
     }
     
    #toggle-on{
@@ -28,10 +41,22 @@ header{
     display: none;
    }
 
+   p{
+    margin-left: auto;
+    padding-bottom: 20px;
+    padding-right: 20px;
+   }
+
 }
 
 
-
+.operator-animation{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    // border: 1px solid black;
+    padding: 30px;
+}
 
 .calculator__container{
     border: solid black 10px;
@@ -110,7 +135,7 @@ header{
         .calc-buttons__operator,
         .calc-buttons__plusMinus,
         .calc-buttons__clear{
-            background-image: linear-gradient(rgb(250, 147, 195), white);
+            background-image: linear-gradient(rgba(250, 147, 195, 0.678), white);
         }
 
         .calc-buttons__btn{
