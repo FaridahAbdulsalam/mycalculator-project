@@ -50,8 +50,6 @@ const handleOperatorClick = (event: Event) => {
 };
 
 const handleMistake = () => {
-    // const backspace = event.target as HTMLButtonElement;
-    // console.log(backspace, event)
     if(num2){
         num2 = "";
         displayBox.textContent = num1 + operatorSign;
@@ -144,17 +142,3 @@ clear.addEventListener("click", handleClearClick);
 toggleButton.addEventListener("click", handleToggleDark);
 toggleButtonOff.addEventListener("click", handleToggleLight);
 
-
-
-
-
-
-//LOGIC
-
-//1. when user clicks a number it should be stored in a variable (string of numbers)
-//2. when user clicks an operation should be stored in separate variable2 (operators string)
-//3. when user clicks on numbers again after operation store in variable 3 (string of numbers)
-//4. when user clicks equals sigh run a function that takes variable 1 and 3 and runs function for variable 2 
-//5. when user clicks C, everything clears
-
-///num1 operator num2
