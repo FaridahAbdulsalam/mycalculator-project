@@ -1,0 +1,116 @@
+@use "./variables" as *;
+
+.calculator__container{
+    border: solid black 10px;
+    border-radius: 60px;
+    width: 425px;
+    height: 812px;
+    background-image: linear-gradient(rgba(128, 128, 128, 0.479), white);
+    margin: 0 auto;
+
+    .calculator__container-notch{
+        height: 30px;
+        width: 170px;
+        margin: 0 auto;
+        background-color: $black-color;
+        border-radius: 0px 0px 10px 10px; 
+    }
+    
+    .display__container{
+        // border: 2px solid black;
+        width: 400px;
+        height: 25vh;
+        padding: 10px;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        align-items: flex-end;
+        
+        .display__view-calculation{
+        height: 5vh;
+        width: 70vw;
+        padding-right: 20px;
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        font-size: 30px;
+        font-family: $main-font;
+        color: rgb(122, 122, 122);
+        }
+
+        .display__view-result{
+        height: 10vh;
+        width: 70vw;
+        padding-right: 20px;
+        display: flex;
+        justify-content: flex-end;
+        align-items: flex-start;
+        font-size: 60px;
+        font-family: $main-font;
+        color: rgb(59, 55, 57) ;
+        }
+    }
+
+    .calc-buttons__container{
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: repeat(6, 1fr);
+        height: 50vh;
+        gap: 15px;
+        padding: 10px;
+    
+
+        #equals{
+            grid-column: 3/5;
+        }
+
+        .calc-buttons__operator, 
+        .calc-buttons__btn,
+        .calc-buttons__clear,
+        .calc-buttons__plusMinus,
+        .calc-buttons__return{
+            border-radius: 50px;
+            border: 1px solid $pink-color;
+            font-size: 50px;
+            font-family: $main-font;
+
+        }
+
+        .calc-buttons__operator,
+        .calc-buttons__plusMinus,
+        .calc-buttons__clear{
+            background-image: $gradient-color1;
+        }
+
+        .calc-buttons__btn{
+            background-image: $gradient-color2;
+        }
+
+        .calc-buttons__return{
+            background-color: $pink-color;
+        }
+    }
+
+}
+
+
+@media screen and (min-width: 1024px)
+{
+    .calculator__container{
+        width: 625px;
+        height: 1112px;
+        .display__container{
+            .display__view-calculation{
+                font-size: 60px;
+            }
+
+            .display__view-result{
+                font-size: 100px;
+            }
+        }
+
+        .calc-buttons__container{
+            height: 80vh;
+        }
+    }
+}

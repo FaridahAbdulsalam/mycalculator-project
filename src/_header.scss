@@ -1,0 +1,75 @@
+@use "./variables" as *;
+
+header{
+
+    padding-bottom: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    h1{
+        color: $pink-color;
+        font-size: 70px;
+        font-family: $main-font;
+    }
+
+    h2{
+        text-align: center;
+        margin: 30px;
+        padding: 20px;
+        background-color: rgba(235, 174, 6, 0.699);
+        border-radius: 10px 50px;
+        font-family: $main-font;
+        color: $black-color;
+    }
+    
+    #toggle-on{
+        margin-left: auto;
+        padding-right: 20px;
+    }
+
+    #toggle-off{
+        margin-left: auto;
+        padding-right: 20px;
+        display: none;
+    }
+
+    p{
+        margin-left: auto;
+        padding-bottom: 20px;
+        padding-right: 20px;
+        font-family: $secondary-font;
+        color: $black-color;
+    }
+
+}
+
+@media screen and (min-width: 1024px){
+    header{
+        margin: auto;
+        padding-left: 20px; 
+        align-items: flex-start;
+   
+        h1{
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        h2{
+            border-radius: 30px 10px;
+        }
+
+        p{
+            // border: 2px white solid;
+            margin-left: 20px;
+            font-size: 20px;
+        }
+
+        #toggle-on,
+        #toggle-off{
+            margin-left: 20px;
+        }
+    }
+
+}
