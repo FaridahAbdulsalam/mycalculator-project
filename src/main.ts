@@ -3,6 +3,7 @@ import "./styles.scss";
 const digits = document.querySelectorAll<HTMLButtonElement>(".calc-buttons__btn");
 const operators = document.querySelectorAll<HTMLButtonElement>(".calc-buttons__operator");
 const equals = document.querySelector<HTMLButtonElement>(".calc-buttons__return");
+const backSpace = document.querySelector<HTMLButtonElement>(".calc-buttons__backspace")
 const clear = document.querySelector<HTMLButtonElement>(".calc-buttons__clear");
 const displayBox = document.querySelector<HTMLInputElement>(".display__view-calculation");
 const displayResult = document.querySelector<HTMLInputElement>(".display__view-result");
@@ -15,7 +16,7 @@ if (!displayBox || !displayResult || !calcBackgroundChange) {
     throw new Error("Issue with viewing selector");
 }
 
-if(!toggleButton || !toggleButtonOff || !digits || !operators || !equals || !clear ){
+if(!toggleButton || !toggleButtonOff || !digits || !operators || !equals || !backSpace ||!clear ){
     throw new Error ("Issue with click selector")
 }
 
@@ -35,7 +36,7 @@ const handleDigitClick = (event: Event) => {
         num2 += digit.innerHTML
         displayBox.innerHTML = num1 + operatorSign + num2;
     }
-    else
+    else 
     {
         displayBox.innerHTML = num1 += digit.innerHTML
     }
@@ -47,6 +48,23 @@ const handleOperatorClick = (event: Event) => {
     operatorSign = operator.innerHTML
     displayBox.innerHTML += operator.innerHTML
 };
+
+const handleMistake = () => {
+    // const backspace = event.target as HTMLButtonElement;
+    // console.log(backspace, event)
+    if(num2){
+        num2 = "";
+        displayBox.textContent = num1 + operatorSign;
+    }else if(operatorSign){
+        operatorSign = "";
+        displayBox.textContent = num1;
+    }else if(num1){
+        num1 = "";
+        displayBox.textContent = "";
+        hasCalledOperator = false;
+    }
+}
+
 
 const handleEqualsClick = () => {
 
@@ -62,8 +80,8 @@ const handleEqualsClick = () => {
         result = Number(num1) * Number(num2)
     }else if(operatorSign === "%"){
         result = Number(num1) % Number(num2)
-    }  else{
-    result = "unknown calculation"
+    } else{
+    result = "Error"
     }
 
     displayBox.innerHTML = num1 + operatorSign + num2; 
@@ -120,6 +138,7 @@ operators.forEach((operator) => {
 });
 
 equals.addEventListener("click", handleEqualsClick);
+backSpace.addEventListener("click", handleMistake);
 clear.addEventListener("click", handleClearClick);
 
 toggleButton.addEventListener("click", handleToggleDark);

@@ -67,7 +67,7 @@
         .calc-buttons__operator, 
         .calc-buttons__btn,
         .calc-buttons__clear,
-        .calc-buttons__plusMinus,
+        .calc-buttons__backspace,
         .calc-buttons__return{
             border-radius: 50px;
             border: 1px solid $pink-color;
@@ -77,7 +77,7 @@
         }
 
         .calc-buttons__operator,
-        .calc-buttons__plusMinus,
+        .calc-buttons__backspace,
         .calc-buttons__clear{
             background-image: $gradient-color1;
         }
